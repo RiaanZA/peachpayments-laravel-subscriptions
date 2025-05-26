@@ -51,15 +51,6 @@ class Subscription extends Model
     ];
 
     /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = [
-        'deleted_at',
-    ];
-
-    /**
      * Get the user that owns the subscription.
      */
     public function user()
@@ -74,8 +65,8 @@ class Subscription extends Model
      */
     public function isActive(): bool
     {
-        return $this->status === SubscriptionStatus::ACTIVE->value && 
-               !$this->isCancelled() && 
+        return $this->status === SubscriptionStatus::ACTIVE->value &&
+               !$this->isCancelled() &&
                !$this->isExpired();
     }
 
@@ -86,7 +77,7 @@ class Subscription extends Model
      */
     public function isCancelled(): bool
     {
-        return $this->status === SubscriptionStatus::CANCELLED->value || 
+        return $this->status === SubscriptionStatus::CANCELLED->value ||
                ($this->ends_at && $this->ends_at->isPast());
     }
 
