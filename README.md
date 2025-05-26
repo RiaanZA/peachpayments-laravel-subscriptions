@@ -17,8 +17,8 @@ A Laravel package for handling Peach Payments subscriptions and recurring paymen
 
 ## Requirements
 
-- PHP 8.1 or higher
-- Laravel 10.0 or higher
+- PHP 8.2 or higher
+- Laravel 10.0, 11.0, or 12.0
 - GuzzleHTTP 7.5 or higher
 
 ## Installation
